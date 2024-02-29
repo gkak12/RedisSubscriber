@@ -50,7 +50,7 @@ public class WebSocketHandler extends TextWebSocketHandler{
 	}
 	
 	public WebSocketSession getFirstWebSocketsession() {
-		return sessionList.get(0);	// 첫번째 세션 리턴, 임시 목적
+		return sessionList.get(0);	// 첫번째 세션 리턴, 테스트 목적
 	}
 }
 
