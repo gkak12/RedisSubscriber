@@ -24,9 +24,9 @@ public class RedisSubscriberService implements MessageListener{
 
 	@Override
 	public void onMessage(Message message, byte[] pattern) {
-		String channel = new String(message.getChannel());
+		String channel = new String(pattern);
 		String content = new String(message.getBody());
-		LOGGER.debug(channel + ": " + content);
+		LOGGER.info(channel + ": " + content);
 		
 		try (WebSocketSession wSession = webSocketHandler.getFirstWebSocketsession()){
 			wSession.sendMessage(new TextMessage(content));
@@ -35,3 +35,4 @@ public class RedisSubscriberService implements MessageListener{
 		}
 	}
 }
+
